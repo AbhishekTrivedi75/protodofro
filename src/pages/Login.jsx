@@ -39,7 +39,7 @@ const Login = () => {
     }
   };
 
-  if (isAuthenticated) return <Navigate to={"/"} />;
+  if (isAuthenticated) return <Navigate to={"/home"} />;
 
   return (
     <div className="login">

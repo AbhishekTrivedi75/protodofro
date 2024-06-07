@@ -70,3 +70,68 @@ a {
   padding: 5rem 2rem;
   background-color: $color4;
 }
+
+/* Define color variables */
+$background-color: #f0f2f5;
+$table-background-color: #ffffff;
+$primary-color: #333;
+$secondary-color: #777;
+$border-color: #ddd;
+$label-background-color: #f7f7f7;
+$hover-background-color: #f1f1f1;
+
+/* Basic SCSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the profile container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: $background-color;
+    padding: 20px;
+}
+
+/* Styling for the profile table */
+.profile-table {
+    background-color: $table-background-color;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Increase the width of the table */
+    max-width: 800px; /* Set a maximum width for larger screens */
+
+    .profile-row {
+        display: flex;
+
+        &:nth-child(odd) {
+            background-color: $label-background-color;
+        }
+
+        &:hover {
+            background-color: $hover-background-color;
+        }
+
+        .profile-cell {
+            padding: 15px 20px;
+            flex: 1;
+
+            &.label {
+                font-weight: bold;
+                color: $primary-color;
+                flex: 0 0 150px; /* Fixed width for label cells */
+            }
+
+            &.value {
+                color: $secondary-color;
+                word-break: break-all; /* Ensure long emails break onto the next line if necessary */
+            }
+        }
+    }
+}
